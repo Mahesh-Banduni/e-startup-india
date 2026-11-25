@@ -1,3 +1,5 @@
+import { Button } from "../ui";
+
 export default function RegisterProfessionalHeroSection() {
   return (
     <section className="py-scale-lg-20 bg-surface relative overflow-hidden border-b border-outline">
@@ -6,7 +8,7 @@ export default function RegisterProfessionalHeroSection() {
           {/* Hero Left */}
           <div className="lg:col-span-7">
             <div className="inline-flex items-center gap-scale-sm-2 bg-secondary border border-outline px-scale-sm-3.5 py-1.5 rounded-full font-label text-label-xs text-primary font-bold mb-scale-sm-4">
-              <span className="w2 h2 rounded-full bg-tertiary" />
+              <span className="w-2 h-2 rounded-full bg-tertiary" />
               Independent Consultant &amp; Referral Partner Network
             </div>
             <h1 className="font-display font-bold text-display-lg-mobile md:text-headline-xl lg:text-display-lg text-primary tracking-tight leading-tight text-balance">
@@ -38,28 +40,29 @@ export default function RegisterProfessionalHeroSection() {
               </div>
             </div>
             <div className="mt-scale-sm-8 flex flex-wrap items-center gap-scale-sm-4">
-              <a
+              <Button
                 href="#registration-form"
-                className="inline-flex items-center font-label text-label-md text-on-accent bg-accent hover:bg-[#E56000] px-scale-sm-7 py-scale-sm-3.5 rounded-DEFAULT font-bold shadow-md transition-all focus-visible:ring-2 focus-visible:ring-primary"
+                size="lg"
+                className="font-bold shadow-md"
               >
                 <span>Register Now</span>
                 {/* @ts-expect-error iconify-icon is a web component */}
                 <iconify-icon
                   icon="lucide:arrow-down"
-                  className="ml-scale-sm-2"
                 />
-              </a>
-              <a
+              </Button>
+              <Button
                 href="#how-it-works"
-                className="inline-flex items-center font-label text-label-md text-primary hover:text-accent bg-white border border-outline hover:border-accent px-scale-sm-6 py-scale-sm-3.5 rounded-DEFAULT font-semibold transition-all focus-visible:ring-2 focus-visible:ring-primary"
+                variant="secondary"
+                size="md"
+                className="border-outline hover:border-accent hover:text-accent"
               >
                 <span>How Verification Works</span>
                 {/* @ts-expect-error iconify-icon is a web component */}
                 <iconify-icon
                   icon="lucide:chevron-right"
-                  className="ml1"
                 />
-              </a>
+              </Button>
             </div>
             <div className="mt-scale-sm-10 pt-scale-sm-8 border-t border-outline grid grid-cols-3 gap-scale-sm-6 max-w-lg">
               {[

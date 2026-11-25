@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { Button } from "../ui";
 
 export default function FinalCallToActionSection() {
   return (
@@ -44,14 +44,11 @@ export default function FinalCallToActionSection() {
               <span className="font-label text-label-xs text-muted-gray block mb-scale-sm-3 font-medium">
                 Monday to Saturday • 9 AM - 7 PM
               </span>
-              <Link
-                href="/contact"
-                className="inline-flex items-center justify-center font-label text-label-md text-on-accent bg-accent hover:bg-[#E56000] px-scale-sm-7 py-scale-sm-3.5 rounded-DEFAULT font-bold shadow-md transition-all focus-visible:ring-2 focus-visible:ring-primary w-full sm:w-auto"
-              >
+              <Button href="/contact" size="lg" className="w-full shadow-md sm:w-auto">
                 <span>Contact Desk</span>
                 {/* @ts-expect-error iconify-icon is a web component */}
-                <iconify-icon icon="lucide:arrow-right" className="ml-scale-sm-2" />
-              </Link>
+                <iconify-icon icon="lucide:arrow-right" />
+              </Button>
             </div>
           </div>
         </div>

@@ -1,3 +1,5 @@
+import { Button } from "../ui";
+
 const whyPoints = [
   { icon: "lucide:zap", iconColor: "text-accent", title: "7-Day Pvt Ltd Incorporation", desc: "India's fastest MCA company registration through direct API integration with the Ministry of Corporate Affairs V3 portal." },
   { icon: "lucide:shield-check", iconColor: "text-tertiary", title: "ISO 9001:2015 Quality Assured", desc: "Every statutory submission undergoes dual-layer expert review before filing, ensuring a 99.4% government approval rate." },
@@ -19,11 +21,11 @@ export default function WhyChooseUsSection() {
             <h2 className="font-display font-bold text-headline-xl-mobile md:text-headline-xl text-primary tracking-tight">Why 10,000+ Founders Choose EStartUp India</h2>
             <p className="mt-scale-sm-4 font-body text-body-md text-muted-gray leading-relaxed text-pretty">We combine institutional legal rigor with the speed and transparency that modern Indian entrepreneurs demand.</p>
             <div className="mt-scale-sm-8">
-              <a href="/about" className="inline-flex items-center font-label text-label-md text-on-accent bg-accent hover:bg-[#E56000] px-scale-sm-7 py-scale-sm-3.5 rounded-DEFAULT font-bold transition-all shadow-md">
+              <Button href="/about" size="lg" className="font-bold shadow-md">
                 <span>Read Our Story</span>
                 {/* @ts-expect-error iconify-icon is a web component */}
-                <iconify-icon icon="lucide:arrow-right" className="ml-scale-sm-2" />
-              </a>
+                <iconify-icon icon="lucide:arrow-right" />
+              </Button>
             </div>
           </div>
           <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-scale-sm-6 mt-scale-sm-6 lg:mt-0">

@@ -1,5 +1,6 @@
 "use client";
 import { useRef, useState } from "react";
+import { Button } from "../ui";
 
 const serviceCards = [
   {
@@ -115,29 +116,29 @@ export default function HomeServicesSection() {
         <div className="mt-scale-sm-8 flex flex-col md:flex-row items-center justify-between gap-scale-sm-4 pb-scale-sm-4 border-b border-outline">
           <div className="flex flex-wrap items-center justify-center gap-scale-sm-2">
             {[{ key: "all", label: "All Services (8)" },{ key: "registration", label: "Registration" },{ key: "compliance", label: "Compliance & Tax" },{ key: "funding", label: "Funding & Plans" },{ key: "ip", label: "Trademark & IP" }].map((f) => (
-              <button key={f.key} type="button" onClick={() => setActiveFilter(f.key)} className={activeFilter === f.key ? "bg-primary text-white px-scale-sm-3.5 py-scale-sm-1.5 rounded-full font-label text-label-xs font-semibold transition-colors" : "bg-white hover:bg-surface-variant text-charcoal border border-outline px-scale-sm-3.5 py-scale-sm-1.5 rounded-full font-label text-label-xs font-semibold transition-colors"}>{f.label}</button>
+              <Button key={f.key} type="button" size="sm" variant={activeFilter === f.key ? "selected" : "secondary"} onClick={() => setActiveFilter(f.key)} className="rounded-full px-scale-sm-3.5 py-scale-sm-1.5 text-label-xs">{f.label}</Button>
             ))}
           </div>
           <div className="flex items-center justify-between sm:justify-end w-full md:w-auto gap-scale-sm-3 shrink-0">
             <div className="flex items-center gap-scale-sm-1.5 bg-secondary border border-outline p-1 rounded-full">
-              <button type="button" onClick={() => scrollCarousel(-344)} aria-label="Previous service" className="w-scale-sm-8 h-scale-sm-8 rounded-full bg-white hover:bg-primary hover:text-white text-primary border border-outline flex items-center justify-center transition-colors">
+              <Button type="button" variant="secondary" size="sm" onClick={() => scrollCarousel(-344)} aria-label="Previous service" className="h-scale-sm-8 w-scale-sm-8 rounded-full bg-white p-0 text-primary hover:bg-primary hover:text-white">
                 {/* @ts-expect-error iconify-icon is a web component */}
                 <iconify-icon icon="lucide:chevron-left" />
-              </button>
-              <button type="button" onClick={toggleMarquee} aria-label="Pause or play auto-scroll" className="w-scale-sm-8 h-scale-sm-8 rounded-full bg-white hover:bg-surface-variant text-charcoal border border-outline flex items-center justify-center transition-colors">
+              </Button>
+              <Button type="button" variant="secondary" size="sm" onClick={toggleMarquee} aria-label="Pause or play auto-scroll" className="h-scale-sm-8 w-scale-sm-8 rounded-full bg-white p-0 text-charcoal">
                 {/* @ts-expect-error iconify-icon is a web component */}
                 <iconify-icon icon={isMarqueePaused ? "lucide:play" : "lucide:pause"} />
-              </button>
-              <button type="button" onClick={() => scrollCarousel(344)} aria-label="Next service" className="w-scale-sm-8 h-scale-sm-8 rounded-full bg-white hover:bg-primary hover:text-white text-primary border border-outline flex items-center justify-center transition-colors">
+              </Button>
+              <Button type="button" variant="secondary" size="sm" onClick={() => scrollCarousel(344)} aria-label="Next service" className="h-scale-sm-8 w-scale-sm-8 rounded-full bg-white p-0 text-primary hover:bg-primary hover:text-white">
                 {/* @ts-expect-error iconify-icon is a web component */}
                 <iconify-icon icon="lucide:chevron-right" />
-              </button>
+              </Button>
             </div>
-            <a href="/services" className="inline-flex items-center gap-scale-sm-2 font-label text-label-sm font-bold text-on-accent bg-accent hover:bg-[#E56000] px-scale-sm-4 py-scale-sm-2 rounded-DEFAULT transition-all shadow-xs">
+            <Button href="/services" size="sm" className="shadow-xs">
               <span>View All</span>
               {/* @ts-expect-error iconify-icon is a web component */}
               <iconify-icon icon="lucide:arrow-right" />
-            </a>
+            </Button>
           </div>
         </div>
       </div>
@@ -154,11 +155,11 @@ export default function HomeServicesSection() {
                   <p className="mt-scale-sm-2.5 font-body text-body-sm text-muted-gray leading-relaxed">{card.description}</p>
                 </div>
                 <div className="mt-scale-sm-6 pt-scale-sm-4 border-t border-outline">
-                  <a href="/services" className="w-full inline-flex items-center justify-center font-label text-label-sm text-on-accent bg-accent hover:bg-[#E56000] px-scale-sm-4 py-scale-sm-2.5 rounded-DEFAULT font-bold transition-colors">
+                  <Button href="/services" size="sm" className="w-full py-scale-sm-2.5 font-bold">
                     <span>View More</span>
                     {/* @ts-expect-error iconify-icon is a web component */}
-                    <iconify-icon icon="lucide:arrow-right" className="ml-scale-sm-1.5" />
-                  </a>
+                    <iconify-icon icon="lucide:arrow-right" />
+                  </Button>
                 </div>
               </div>
             </article>

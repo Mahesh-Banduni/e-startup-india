@@ -1,3 +1,5 @@
+import { Button } from "../ui";
+
 export default function HomeHeroSection() {
   return (
     <section className="relative overflow-hidden bg-surface pt-scale-lg-16 pb-scale-lg-24">
@@ -9,25 +11,25 @@ export default function HomeHeroSection() {
               <span className="text-primary font-bold">India&apos;s Leading Startup Growth Partner</span>
               <span className="text-tertiary font-bold hidden xs:inline">• 100% Digital</span>
             </div>
-            <h1 className="font-display font-bold text-display-lg-mobile md:text-headline-xl lg:text-display-lg text-primary tracking-tight text-balance">
+            <h1 className="">
               Your All-in-One Partner to{" "}
               <span className="underline decoration-accent underline-offset-8">Launch &amp; Grow</span>{" "}
               Your Business in India.
             </h1>
-            <p className="mt-scale-md-6 font-body text-body-lg text-muted-gray max-w-xl text-pretty">
+            <p className="mt-scale-md-6 max-w-xl para-text-1">
               From Private Limited company incorporation and Startup India (DPIIT) recognition to GST filings, trademark IP protection, and funding strategy—our verified specialists handle complex legalities so you can focus on building.
             </p>
             <div className="mt-scale-md-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-scale-sm-4">
-              <a href="#consultation" className="inline-flex items-center justify-center font-label text-label-lg text-on-accent bg-accent hover:bg-[#E56000] active:scale-[0.98] transition-all duration-8 px-scale-sm-7 py-scale-sm-3.5 rounded-DEFAULT font-bold shadow-lg shadow-accent/25 hover:shadow-xl hover:shadow-accent/30 text-center">
+              <Button href="#consultation" size="lg" className="active:scale-[0.98] shadow-lg shadow-accent/25 text-center hover:shadow-xl hover:shadow-accent/30">
                 <span>Start Your Journey</span>
                 {/* @ts-expect-error iconify-icon is a web component */}
-                <iconify-icon icon="lucide:arrow-up-right" className="ml-scale-sm-2" />
-              </a>
-              <a href="/contact" className="inline-flex items-center justify-center font-label text-label-lg text-primary bg-white hover:bg-surface-variant border-2 border-primary active:scale-[0.98] transition-all duration-200 px-scale-sm-7 py-scale-sm-3.5 rounded-DEFAULT font-bold text-center shadow-sm">
+                <iconify-icon icon="lucide:arrow-up-right" />
+              </Button>
+              <Button href="/contact" variant="primary-outline" size="lg" className="active:scale-[0.98] font-bold text-center shadow-sm">
                 {/* @ts-expect-error iconify-icon is a web component */}
-                <iconify-icon icon="lucide:calendar-check-2" className="mr-scale-sm-2.5 text-accent" />
+                <iconify-icon icon="lucide:calendar-check-2" className="text-accent" />
                 <span>Book Free Consultation</span>
-              </a>
+              </Button>
             </div>
             <div className="mt-scale-md-10 pt-scale-sm-7 border-t border-outline flex flex-col sm:flex-row sm:items-center gap-scale-sm-4 sm:gap-scale-sm-6">
               <div className="flex -space-x-2.5">

@@ -1,4 +1,5 @@
 "use client";
+import { Button, Input, Label, Select, Textarea } from "../ui";
 
 export default function ContactSection() {
   return (
@@ -41,69 +42,74 @@ export default function ContactSection() {
             >
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-scale-sm-6">
                 <div>
-                  <label className="block font-label text-label-sm font-semibold text-charcoal mb-scale-sm-2">
+                  <Label htmlFor="founder-name">
                     Founder Name *
-                  </label>
-                  <input
+                  </Label>
+                  <Input
+                    id="founder-name"
                     type="text"
                     placeholder="e.g. Rahul Sharma"
                     required
-                    className="w-full bg-secondary border border-outline rounded-DEFAULT px4 py3 font-body text-body-sm text-charcoal placeholder-muted-gray focus:outline-none focus:border-accent focus-visible:ring-2 focus-visible:ring-primary"
+                    variant="secondary"
                   />
                 </div>
                 <div>
-                  <label className="block font-label text-label-sm font-semibold text-charcoal mb-scale-sm-2">
+                  <Label htmlFor="work-email">
                     Work Email *
-                  </label>
-                  <input
+                  </Label>
+                  <Input
+                    id="work-email"
                     type="email"
                     placeholder="rahul@venture.com"
                     required
-                    className="w-full bg-secondary border border-outline rounded-DEFAULT px4 py3 font-body text-body-sm text-charcoal placeholder-muted-gray focus:outline-none focus:border-accent focus-visible:ring-2 focus-visible:ring-primary"
+                    variant="secondary"
                   />
                 </div>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-scale-sm-6">
                 <div>
-                  <label className="block font-label text-label-sm font-semibold text-charcoal mb-scale-sm-2">
+                  <Label htmlFor="phone-number">
                     Phone Number *
-                  </label>
+                  </Label>
                   <div className="flex items-center bg-secondary border border-outline rounded-DEFAULT focus-within:border-accent focus-within:ring-2 focus-within:ring-primary">
                     <span className="px-scale-sm-3 text-body-sm font-semibold text-muted-gray border-r border-outline">
                       +91
                     </span>
-                    <input
+                    <Input
+                      id="phone-number"
                       type="tel"
                       placeholder="98765 43210"
                       required
+                      variant="unstyled"
                       className="w-full bg-transparent px-scale-sm-3 py-scale-sm-3 font-body text-body-sm text-charcoal placeholder-muted-gray focus:outline-none"
                     />
                   </div>
                 </div>
                 <div>
-                  <label className="block font-label text-label-sm font-semibold text-charcoal mb-scale-sm-2">
+                  <Label htmlFor="service-interest">
                     Primary Service of Interest
-                  </label>
-                  <select className="w-full bg-secondary border border-outline rounded-DEFAULT px-scale-sm-4 py-scale-sm-3 font-body text-body-sm text-charcoal focus:outline-none focus:border-accent focus-visible:ring-2 focus-visible:ring-primary">
+                  </Label>
+                  <Select id="service-interest" variant="secondary">
                     <option>Private Limited Incorporation</option>
                     <option>Startup India (DPIIT) Registration</option>
                     <option>Trademark &amp; IP Protection</option>
                     <option>GST &amp; Annual ROC Compliance</option>
                     <option>Seed Fund &amp; Investment Advisory</option>
                     <option>Other Corporate Inquiry</option>
-                  </select>
+                  </Select>
                 </div>
               </div>
 
               <div>
-                <label className="block font-label text-label-sm font-semibold text-charcoal mb-scale-sm-2">
+                <Label htmlFor="startup-query">
                   Startup Details or Query
-                </label>
-                <textarea
+                </Label>
+                <Textarea
+                  id="startup-query"
                   rows={4}
                   placeholder="Tell us briefly about your venture, business model, or current filing roadblock..."
-                  className="w-full bg-secondary border border-outline rounded-DEFAULT px-scale-sm-4 py-scale-sm-3 font-body text-body-sm text-charcoal placeholder-muted-gray focus:outline-none focus:border-accent focus-visible:ring-2 focus-visible:ring-primary"
+                  variant="secondary"
                 />
               </div>
 
@@ -118,14 +124,15 @@ export default function ContactSection() {
                     100% Confidential • Non-Disclosure Bound
                   </span>
                 </div>
-                <button
+                <Button
                   type="submit"
-                  className="inline-flex w-full sm:w-auto items-center justify-center font-label text-label-md text-on-accent bg-accent hover:bg-[#E56000] px-scale-sm-8 py-scale-sm-3.5 rounded-DEFAULT font-bold transition-all shadow-md shadow-accent/20"
+                  size="lg"
+                  className="w-full font-bold shadow-md shadow-accent/20 sm:w-auto"
                 >
                   <span>Submit Request</span>
                   {/* @ts-expect-error iconify-icon is a web component */}
-                  <iconify-icon icon="lucide:send" className="ml-scale-sm-2" />
-                </button>
+                  <iconify-icon icon="lucide:send" />
+                </Button>
               </div>
             </form>
           </div>

@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { Button } from "../ui";
 
 const services = [
   {
@@ -99,17 +99,15 @@ export default function ServicesDirectorySection() {
                   </p>
                 </div>
                 <div className="mt-scale-sm-6 pt-scale-sm-4 border-t border-outline">
-                  <Link
+                  <Button
                     href="/contact"
-                    className="w-full inline-flex items-center justify-center font-label text-label-sm text-on-accent bg-accent hover:bg-[#E56000] px-scale-sm-4 py-scale-sm-2.5 rounded-DEFAULT font-bold transition-colors focus-visible:ring-2 focus-visible:ring-primary"
+                    size="sm"
+                    className="w-full py-scale-sm-2.5 font-bold"
                   >
                     <span>View More</span>
                     {/* @ts-expect-error iconify-icon is a web component */}
-                    <iconify-icon
-                      icon="lucide:arrow-right"
-                      className="ml-1.5"
-                    />
-                  </Link>
+                    <iconify-icon icon="lucide:arrow-right" />
+                  </Button>
                 </div>
               </div>
             </article>

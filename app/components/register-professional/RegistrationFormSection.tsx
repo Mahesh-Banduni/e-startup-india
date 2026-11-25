@@ -1,6 +1,6 @@
 "use client";
-import Link from "next/link";
 import { useState } from "react";
+import { Button, Input, Label, Select, Textarea } from "../ui";
 
 export default function RegistrationFormSection() {
   const [currentStep, setCurrentStep] = useState(1);
@@ -91,18 +91,21 @@ export default function RegistrationFormSection() {
                   registrations and contact you within 48 business hours.
                 </p>
                 <div className="mt-scale-sm-8 flex flex-col sm:flex-row justify-center gap-scale-sm-4">
-                  <Link
+                  <Button
                     href="/"
-                    className="font-label text-label-sm text-primary hover:text-accent bg-secondary px-scale-sm-6 py-scale-sm-2.5 rounded-DEFAULT font-semibold"
+                    variant="light"
+                    size="sm"
+                    className="font-semibold"
                   >
                     Return to Home
-                  </Link>
-                  <Link
+                  </Button>
+                  <Button
                     href="/services"
-                    className="font-label text-label-sm text-on-accent bg-accent hover:bg-[#E56000] px-scale-sm-6 py-scale-sm-2.5 rounded-DEFAULT font-bold"
+                    size="sm"
+                    className="font-bold"
                   >
                     Explore Services Catalog
-                  </Link>
+                  </Button>
                 </div>
               </div>
             )}
@@ -116,31 +119,31 @@ export default function RegistrationFormSection() {
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-scale-sm-6">
                   <div>
-                    <label className="block font-label text-label-sm font-semibold text-charcoal mb-scale-sm-2">Full Name <span className="text-primary font-bold">*</span></label>
-                    <input type="text" name="fullName" placeholder="e.g. Adv. Rajesh Sharma" required className="w-full bg-white border border-outline rounded-DEFAULT px-scale-sm-4 py-scale-sm-3 font-body text-body-sm text-charcoal focus:border-accent focus-visible:ring-2 focus-visible:ring-primary focus:outline-none" />
+                    <Label htmlFor="fullName">Full Name <span className="text-primary font-bold">*</span></Label>
+                    <Input id="fullName" type="text" name="fullName" placeholder="e.g. Adv. Rajesh Sharma" required />
                   </div>
                   <div>
-                    <label className="block font-label text-label-sm font-semibold text-charcoal mb-scale-sm-2">Email Address <span className="text-primary font-bold">*</span></label>
-                    <input type="email" name="email" placeholder="rajesh@sharmalegal.in" required className="w-full bg-white border border-outline rounded-DEFAULT px-scale-sm-4 py-scale-sm-3 font-body text-body-sm text-charcoal focus:border-accent focus-visible:ring-2 focus-visible:ring-primary focus:outline-none" />
+                    <Label htmlFor="email">Email Address <span className="text-primary font-bold">*</span></Label>
+                    <Input id="email" type="email" name="email" placeholder="rajesh@sharmalegal.in" required />
                   </div>
                   <div>
-                    <label className="block font-label text-label-sm font-semibold text-charcoal mb-scale-sm-2">Mobile Number (WhatsApp Enabled) <span className="text-primary font-bold">*</span></label>
+                    <Label htmlFor="mobileNumber">Mobile Number (WhatsApp Enabled) <span className="text-primary font-bold">*</span></Label>
                     <div className="flex items-center">
                       <span className="inline-flex items-center px-scale-sm-3.5 py-scale-sm-3 rounded-l-DEFAULT border border-r-0 border-outline bg-secondary text-primary font-semibold text-label-sm">+91</span>
-                      <input type="tel" name="mobileNumber" placeholder="98765 43210" pattern="[0-9]{10}" required className="w-full bg-white border border-outline rounded-r-DEFAULT px-scale-sm-4 py-scale-sm-3 font-body text-body-sm text-charcoal focus:border-accent focus-visible:ring-2 focus-visible:ring-primary focus:outline-none" />
+                      <Input id="mobileNumber" type="tel" name="mobileNumber" placeholder="98765 43210" pattern="[0-9]{10}" required className="rounded-r-DEFAULT" />
                     </div>
                   </div>
                   <div>
-                    <label className="block font-label text-label-sm font-semibold text-charcoal mb-scale-sm-2">Alternate Contact Number</label>
-                    <input type="tel" name="alternateNumber" placeholder="Landline / Office Number" className="w-full bg-white border border-outline rounded-DEFAULT px-scale-sm-4 py-scale-sm-3 font-body text-body-sm text-charcoal focus:border-accent focus-visible:ring-2 focus-visible:ring-primary focus:outline-none" />
+                    <Label htmlFor="alternateNumber">Alternate Contact Number</Label>
+                    <Input id="alternateNumber" type="tel" name="alternateNumber" placeholder="Landline / Office Number" />
                   </div>
                 </div>
                 <div className="mt-scale-sm-8 flex justify-end">
-                  <button type="button" onClick={() => goToStep(2)} className="inline-flex items-center font-label text-label-sm text-on-accent bg-accent hover:bg-[#E56000] px-scale-sm-6 py-scale-sm-3 rounded-DEFAULT font-bold transition-colors focus-visible:ring-2 focus-visible:ring-primary">
+                  <Button type="button" onClick={() => goToStep(2)} size="md" className="px-scale-sm-6 font-bold">
                     <span>Next: Professional Info</span>
                     {/* @ts-expect-error iconify-icon is a web component */}
-                    <iconify-icon icon="lucide:arrow-right" className="ml-scale-sm-2" />
-                  </button>
+                    <iconify-icon icon="lucide:arrow-right" />
+                  </Button>
                 </div>
               </div>
             )}
@@ -154,8 +157,8 @@ export default function RegistrationFormSection() {
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-scale-sm-6">
                   <div>
-                    <label className="block font-label text-label-sm font-semibold text-charcoal mb-scale-sm-2">Professional Category <span className="text-accent">*</span></label>
-                    <select name="professionalCategory" required className="w-full bg-white border border-outline rounded-DEFAULT px-scale-sm-4 py-scale-sm-3 font-body text-body-sm text-charcoal focus:border-accent focus-visible:ring-2 focus-visible:ring-primary focus:outline-none">
+                    <Label htmlFor="professionalCategory">Professional Category <span className="text-accent">*</span></Label>
+                    <Select id="professionalCategory" name="professionalCategory" required>
                       <option value="">Select Category</option>
                       <option value="CA">Chartered Accountant (CA)</option>
                       <option value="CS">Company Secretary (CS)</option>
@@ -167,46 +170,46 @@ export default function RegistrationFormSection() {
                       <option value="Mentor">Startup Mentor</option>
                       <option value="Marketing">Marketing Consultant</option>
                       <option value="IP">Intellectual Property (IP) Consultant</option>
-                    </select>
+                    </Select>
                   </div>
                   <div>
-                    <label className="block font-label text-label-sm font-semibold text-charcoal mb-scale-sm-2">Highest Qualification <span className="text-accent">*</span></label>
-                    <input type="text" name="qualification" placeholder="e.g. FCA, FCS, LL.M, MBA Finance" required className="w-full bg-white border border-outline rounded-DEFAULT px-scale-sm-4 py-scale-sm-3 font-body text-body-sm text-charcoal focus:border-accent focus-visible:ring-2 focus-visible:ring-primary focus:outline-none" />
+                    <Label htmlFor="qualification">Highest Qualification <span className="text-accent">*</span></Label>
+                    <Input id="qualification" type="text" name="qualification" placeholder="e.g. FCA, FCS, LL.M, MBA Finance" required />
                   </div>
                   <div>
-                    <label className="block font-label text-label-sm font-semibold text-charcoal mb-scale-sm-2">Primary Specialization <span className="text-accent">*</span></label>
-                    <input type="text" name="specialization" placeholder="e.g. Corporate Taxation, M&A, ROC Filings" required className="w-full bg-white border border-outline rounded-DEFAULT px-scale-sm-4 py-scale-sm-3 font-body text-body-sm text-charcoal focus:border-accent focus-visible:ring-2 focus-visible:ring-primary focus:outline-none" />
+                    <Label htmlFor="specialization">Primary Specialization <span className="text-accent">*</span></Label>
+                    <Input id="specialization" type="text" name="specialization" placeholder="e.g. Corporate Taxation, M&A, ROC Filings" required />
                   </div>
                   <div>
-                    <label className="block font-label text-label-sm font-semibold text-charcoal mb-scale-sm-2">Total Years of Experience <span className="text-accent">*</span></label>
-                    <select name="yearsExperience" required className="w-full bg-white border border-outline rounded-DEFAULT px-scale-sm-4 py-scale-sm-3 font-body text-body-sm text-charcoal focus:border-accent focus-visible:ring-2 focus-visible:ring-primary focus:outline-none">
+                    <Label htmlFor="yearsExperience">Total Years of Experience <span className="text-accent">*</span></Label>
+                    <Select id="yearsExperience" name="yearsExperience" required>
                       <option value="">Select Experience Range</option>
                       <option value="1-3">1 to 3 Years</option>
                       <option value="3-5">3 to 5 Years</option>
                       <option value="5-10">5 to 10 Years</option>
                       <option value="10+">10+ Years (Senior Practice)</option>
-                    </select>
+                    </Select>
                   </div>
                   <div>
-                    <label className="block font-label text-label-sm font-semibold text-charcoal mb-scale-sm-2">Membership / Registration Number <span className="text-accent">*</span></label>
-                    <input type="text" name="membershipNumber" placeholder="e.g. ICAI MRN 512345 / Bar Enrollment D/123/2012" required className="w-full bg-white border border-outline rounded-DEFAULT px-scale-sm-4 py-scale-sm-3 font-body text-body-sm text-charcoal focus:border-accent focus-visible:ring-2 focus-visible:ring-primary focus:outline-none" />
+                    <Label htmlFor="membershipNumber">Membership / Registration Number <span className="text-accent">*</span></Label>
+                    <Input id="membershipNumber" type="text" name="membershipNumber" placeholder="e.g. ICAI MRN 512345 / Bar Enrollment D/123/2012" required />
                   </div>
                   <div>
-                    <label className="block font-label text-label-sm font-semibold text-charcoal mb-scale-sm-2">Current Organization / Firm Name <span className="text-accent">*</span></label>
-                    <input type="text" name="currentOrg" placeholder="e.g. Sharma & Associates Chartered Accountants" required className="w-full bg-white border border-outline rounded-DEFAULT px-scale-sm-4 py-scale-sm-3 font-body text-body-sm text-charcoal focus:border-accent focus-visible:ring-2 focus-visible:ring-primary focus:outline-none" />
+                    <Label htmlFor="currentOrg">Current Organization / Firm Name <span className="text-accent">*</span></Label>
+                    <Input id="currentOrg" type="text" name="currentOrg" placeholder="e.g. Sharma & Associates Chartered Accountants" required />
                   </div>
                 </div>
                 <div className="mt-scale-sm-8 flex flex-col-reverse sm:flex-row sm:justify-between gap-scale-sm-3">
-                  <button type="button" onClick={() => goToStep(1)} className="inline-flex items-center font-label text-label-sm text-charcoal hover:text-primary bg-secondary px-scale-sm-5 py-scale-sm-3 rounded-DEFAULT font-semibold transition-colors focus-visible:ring-2 focus-visible:ring-primary">
+                  <Button type="button" onClick={() => goToStep(1)} variant="light" size="md" className="px-scale-sm-5 text-charcoal hover:text-primary">
                     {/* @ts-expect-error iconify-icon is a web component */}
-                    <iconify-icon icon="lucide:arrow-left" className="mr-scale-sm-2" />
+                    <iconify-icon icon="lucide:arrow-left" />
                     <span>Back</span>
-                  </button>
-                  <button type="button" onClick={() => goToStep(3)} className="inline-flex items-center font-label text-label-sm text-on-accent bg-accent hover:bg-[#E56000] px-scale-sm-6 py-scale-sm-3 rounded-DEFAULT font-bold transition-colors focus-visible:ring-2 focus-visible:ring-primary">
+                  </Button>
+                  <Button type="button" onClick={() => goToStep(3)} size="md" className="px-scale-sm-6 font-bold">
                     <span>Next: Business Information</span>
                     {/* @ts-expect-error iconify-icon is a web component */}
-                    <iconify-icon icon="lucide:arrow-right" className="ml-scale-sm-2" />
-                  </button>
+                    <iconify-icon icon="lucide:arrow-right" />
+                  </Button>
                 </div>
               </div>
             )}
@@ -220,20 +223,20 @@ export default function RegistrationFormSection() {
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-scale-sm-6">
                   <div className="md:col-span-2">
-                    <label className="block font-label text-label-sm font-semibold text-charcoal mb-scale-sm-2">Company / Firm Registered Name <span className="text-accent">*</span></label>
-                    <input type="text" name="firmName" placeholder="e.g. Apex Corporate Consultants LLP" required className="w-full bg-white border border-outline rounded-DEFAULT px-scale-sm-4 py-scale-sm-3 font-body text-body-sm text-charcoal focus:border-accent focus-visible:ring-2 focus-visible:ring-primary focus:outline-none" />
+                    <Label htmlFor="firmName">Company / Firm Registered Name <span className="text-accent">*</span></Label>
+                    <Input id="firmName" type="text" name="firmName" placeholder="e.g. Apex Corporate Consultants LLP" required />
                   </div>
                   <div className="md:col-span-2">
-                    <label className="block font-label text-label-sm font-semibold text-charcoal mb-scale-sm-2">Office Address <span className="text-accent">*</span></label>
-                    <input type="text" name="officeAddress" placeholder="Suite 402, Barakhamba Road, Connaught Place" required className="w-full bg-white border border-outline rounded-DEFAULT px-scale-sm-4 py-scale-sm-3 font-body text-body-sm text-charcoal focus:border-accent focus-visible:ring-2 focus-visible:ring-primary focus:outline-none" />
+                    <Label htmlFor="officeAddress">Office Address <span className="text-accent">*</span></Label>
+                    <Input id="officeAddress" type="text" name="officeAddress" placeholder="Suite 402, Barakhamba Road, Connaught Place" required />
                   </div>
                   <div>
-                    <label className="block font-label text-label-sm font-semibold text-charcoal mb-scale-sm-2">City <span className="text-accent">*</span></label>
-                    <input type="text" name="city" placeholder="New Delhi" required className="w-full bg-white border border-outline rounded-DEFAULT px-scale-sm-4 py-scale-sm-3 font-body text-body-sm text-charcoal focus:border-accent focus-visible:ring-2 focus-visible:ring-primary focus:outline-none" />
+                    <Label htmlFor="city">City <span className="text-accent">*</span></Label>
+                    <Input id="city" type="text" name="city" placeholder="New Delhi" required />
                   </div>
                   <div>
-                    <label className="block font-label text-label-sm font-semibold text-charcoal mb-scale-sm-2">State <span className="text-accent">*</span></label>
-                    <select name="state" required className="w-full bg-white border border-outline rounded-DEFAULT px-scale-sm-4 py-scale-sm-3 font-body text-body-sm text-charcoal focus:border-accent focus-visible:ring-2 focus-visible:ring-primary focus:outline-none">
+                    <Label htmlFor="state">State <span className="text-accent">*</span></Label>
+                    <Select id="state" name="state" required>
                       <option value="">Select State / UT</option>
                       <option value="Delhi">Delhi</option>
                       <option value="Maharashtra">Maharashtra</option>
@@ -245,32 +248,32 @@ export default function RegistrationFormSection() {
                       <option value="Haryana">Haryana</option>
                       <option value="West Bengal">West Bengal</option>
                       <option value="Other">Other State / UT</option>
-                    </select>
+                    </Select>
                   </div>
                   <div>
-                    <label className="block font-label text-label-sm font-semibold text-charcoal mb-scale-sm-2">PIN Code <span className="text-accent">*</span></label>
-                    <input type="text" name="pinCode" placeholder="110001" pattern="[0-9]{6}" required className="w-full bg-white border border-outline rounded-DEFAULT px-scale-sm-4 py-scale-sm-3 font-body text-body-sm text-charcoal focus:border-accent focus-visible:ring-2 focus-visible:ring-primary focus:outline-none" />
+                    <Label htmlFor="pinCode">PIN Code <span className="text-accent">*</span></Label>
+                    <Input id="pinCode" type="text" name="pinCode" placeholder="110001" pattern="[0-9]{6}" required />
                   </div>
                   <div>
-                    <label className="block font-label text-label-sm font-semibold text-charcoal mb-scale-sm-2">Website URL</label>
-                    <input type="url" name="website" placeholder="https://www.yourfirm.in" className="w-full bg-white border border-outline rounded-DEFAULT px-scale-sm-4 py-scale-sm-3 font-body text-body-sm text-charcoal focus:border-accent focus-visible:ring-2 focus-visible:ring-primary focus:outline-none" />
+                    <Label htmlFor="website">Website URL</Label>
+                    <Input id="website" type="url" name="website" placeholder="https://www.yourfirm.in" />
                   </div>
                   <div>
-                    <label className="block font-label text-label-sm font-semibold text-charcoal mb-scale-sm-2">LinkedIn Profile</label>
-                    <input type="url" name="linkedin" placeholder="https://linkedin.com/in/yourprofile" className="w-full bg-white border border-outline rounded-DEFAULT px-scale-sm-4 py-scale-sm-3 font-body text-body-sm text-charcoal focus:border-accent focus-visible:ring-2 focus-visible:ring-primary focus:outline-none" />
+                    <Label htmlFor="linkedin">LinkedIn Profile</Label>
+                    <Input id="linkedin" type="url" name="linkedin" placeholder="https://linkedin.com/in/yourprofile" />
                   </div>
                 </div>
                 <div className="mt-scale-sm-8 flex flex-col-reverse sm:flex-row sm:justify-between gap-scale-sm-3">
-                  <button type="button" onClick={() => goToStep(2)} className="inline-flex items-center font-label text-label-sm text-charcoal hover:text-primary bg-secondary px-scale-sm-5 py-scale-sm-3 rounded-DEFAULT font-semibold transition-colors focus-visible:ring-2 focus-visible:ring-primary">
+                  <Button type="button" onClick={() => goToStep(2)} variant="light" size="md" className="px-scale-sm-5 text-charcoal hover:text-primary">
                     {/* @ts-expect-error iconify-icon is a web component */}
-                    <iconify-icon icon="lucide:arrow-left" className="mr-scale-sm-2" />
+                    <iconify-icon icon="lucide:arrow-left" />
                     <span>Back</span>
-                  </button>
-                  <button type="button" onClick={() => goToStep(4)} className="inline-flex items-center font-label text-label-sm text-on-accent bg-accent hover:bg-[#E56000] px-scale-sm-6 py-scale-sm-3 rounded-DEFAULT font-bold transition-colors focus-visible:ring-2 focus-visible:ring-primary">
+                  </Button>
+                  <Button type="button" onClick={() => goToStep(4)} size="md" className="px-scale-sm-6 font-bold">
                     <span>Next: Services &amp; Documents</span>
                     {/* @ts-expect-error iconify-icon is a web component */}
-                    <iconify-icon icon="lucide:arrow-right" className="ml-scale-sm-2" />
-                  </button>
+                    <iconify-icon icon="lucide:arrow-right" />
+                  </Button>
                 </div>
               </div>
             )}
@@ -284,10 +287,10 @@ export default function RegistrationFormSection() {
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-scale-sm-3 mb-scale-sm-8">
                   {["Accounting & Auditing", "Company Registration", "GST Registration & Filing", "Income Tax Filing", "Legal Consultancy", "Company Compliance", "Trademark Registration", "Business Consultancy", "Funding Consultancy", "Other Services"].map((svc) => (
-                    <label key={svc} className="flex items-center gap-scale-sm-3 p-scale-sm-3.5 rounded-lg border border-outline bg-surface hover:bg-secondary cursor-pointer transition-colors">
-                      <input type="checkbox" name="services" value={svc} className="rounded text-accent focus:ring-accent border-outline" />
+                    <Label key={svc} variant="plain" className="flex items-center gap-scale-sm-3 p-scale-sm-3.5 rounded-lg border border-outline bg-surface hover:bg-secondary cursor-pointer transition-colors">
+                      <Input variant="unstyled" type="checkbox" name="services" value={svc} className="rounded text-accent focus:ring-accent border-outline" />
                       <span className="font-body text-body-sm text-charcoal font-medium">{svc}</span>
-                    </label>
+                    </Label>
                   ))}
                 </div>
 
@@ -301,16 +304,16 @@ export default function RegistrationFormSection() {
                     { icon: "lucide:id-card", iconColor: "text-tertiary", label: "Government ID Proof", required: true, hint: "Aadhaar Card / PAN Card / Passport" },
                     { icon: "lucide:award", iconColor: "text-primary", label: "Professional Membership Certificate", required: false, hint: "COP or Council Enrollment Letter" },
                     { icon: "lucide:building", iconColor: "text-primary", label: "Company / Firm Registration Certificate", required: false, hint: "ROC Certificate / Partnership Deed (if applicable)" },
-                  ].map((doc) => (
+                  ].map((doc, index) => (
                     <div key={doc.label} className="p-scale-sm-4 rounded-xl border border-dashed border-outline bg-surface hover:bg-secondary/40 transition-colors">
                       <div className="flex items-center gap-scale-sm-3 mb-scale-sm-2">
                         {/* @ts-expect-error iconify-icon is a web component */}
                         <iconify-icon icon={doc.icon} className={`${doc.iconColor} text-headline-sm`} />
-                        <label className="font-label text-label-sm font-semibold text-charcoal">
+                        <Label htmlFor={`document-${index}`} variant="plain" className="font-label text-label-sm font-semibold text-charcoal">
                           {doc.label} {doc.required && <span className="text-primary font-bold">*</span>}
-                        </label>
+                        </Label>
                       </div>
-                      <input type="file" required={doc.required} className="w-full font-body text-body-xs text-muted-gray file:mr4 file:py-scale-sm-2 file:px-scale-sm-4 file:rounded-DEFAULT file:border-0 file:text-label-xs file:font-semibold file:bg-primary file:text-white hover:file:bg-primary/90" />
+                      <Input id={`document-${index}`} variant="unstyled" type="file" required={doc.required} className="w-full font-body text-body-xs text-muted-gray file:mr4 file:py-scale-sm-2 file:px-scale-sm-4 file:rounded-DEFAULT file:border-0 file:text-label-xs file:font-semibold file:bg-primary file:text-white hover:file:bg-primary/90" />
                       <span className="block font-body text-body-xs text-muted-gray mt-1.5">{doc.hint}</span>
                     </div>
                   ))}
@@ -318,24 +321,24 @@ export default function RegistrationFormSection() {
                     <div className="flex items-center gap-scale-sm-3 mb-scale-sm-2">
                       {/* @ts-expect-error iconify-icon is a web component */}
                       <iconify-icon icon="lucide:file-text" className="text-accent text-headline-sm" />
-                      <label className="font-label text-label-sm font-semibold text-charcoal">Profile / Resume <span className="text-primary font-bold">*</span></label>
+                      <Label htmlFor="profile-resume" variant="plain" className="font-label text-label-sm font-semibold text-charcoal">Profile / Resume <span className="text-primary font-bold">*</span></Label>
                     </div>
-                    <input type="file" required className="w-full font-body text-body-xs text-muted-gray file:mr4 file:py-scale-sm-2 file:px-scale-sm-4 file:rounded-DEFAULT file:border-0 file:text-label-xs file:font-semibold file:bg-primary file:text-white hover:file:bg-primary/90" />
+                    <Input id="profile-resume" variant="unstyled" type="file" required className="w-full font-body text-body-xs text-muted-gray file:mr4 file:py-scale-sm-2 file:px-scale-sm-4 file:rounded-DEFAULT file:border-0 file:text-label-xs file:font-semibold file:bg-primary file:text-white hover:file:bg-primary/90" />
                     <span className="block font-body text-body-xs text-muted-gray mt-1.5">Detailed curriculum vitae / firm practice brochure</span>
                   </div>
                 </div>
 
                 <div className="mt-scale-sm-8 flex flex-col-reverse sm:flex-row sm:justify-between gap-scale-sm-3">
-                  <button type="button" onClick={() => goToStep(3)} className="inline-flex items-center font-label text-label-sm text-charcoal hover:text-primary bg-secondary px-scale-sm-5 py-scale-sm-3 rounded-DEFAULT font-semibold transition-colors focus-visible:ring-2 focus-visible:ring-primary">
+                  <Button type="button" onClick={() => goToStep(3)} variant="light" size="md" className="px-scale-sm-5 text-charcoal hover:text-primary">
                     {/* @ts-expect-error iconify-icon is a web component */}
-                    <iconify-icon icon="lucide:arrow-left" className="mr-scale-sm-2" />
+                    <iconify-icon icon="lucide:arrow-left" />
                     <span>Back</span>
-                  </button>
-                  <button type="button" onClick={() => goToStep(5)} className="inline-flex items-center font-label text-label-sm text-on-accent bg-accent hover:bg-[#E56000] px-scale-sm-6 py-scale-sm-3 rounded-DEFAULT font-bold transition-colors focus-visible:ring-2 focus-visible:ring-primary">
+                  </Button>
+                  <Button type="button" onClick={() => goToStep(5)} size="md" className="px-scale-sm-6 font-bold">
                     <span>Next: Additional Info &amp; Declaration</span>
                     {/* @ts-expect-error iconify-icon is a web component */}
-                    <iconify-icon icon="lucide:arrow-right" className="ml-scale-sm-2" />
-                  </button>
+                    <iconify-icon icon="lucide:arrow-right" />
+                  </Button>
                 </div>
               </div>
             )}
@@ -349,22 +352,22 @@ export default function RegistrationFormSection() {
                 </div>
                 <div className="space-y-scale-sm-6 mb-scale-sm-8">
                   <div>
-                    <label className="block font-label text-label-sm font-semibold text-charcoal mb-scale-sm-2">Brief Professional Introduction <span className="text-accent">*</span></label>
-                    <textarea name="bio" rows={3} required placeholder="Describe your primary practice expertise, landmark assignments, and value proposition for Indian founders (100-250 words)..." className="w-full bg-white border border-outline rounded-DEFAULT px-scale-sm-4 py-scale-sm-3 font-body text-body-sm text-charcoal focus:border-accent focus-visible:ring-2 focus-visible:ring-primary focus:outline-none" />
+                    <Label htmlFor="bio">Brief Professional Introduction <span className="text-accent">*</span></Label>
+                    <Textarea id="bio" name="bio" rows={3} required placeholder="Describe your primary practice expertise, landmark assignments, and value proposition for Indian founders (100-250 words)..." />
                   </div>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-scale-sm-6">
                     <div>
-                      <label className="block font-label text-label-sm font-semibold text-charcoal mb-scale-sm-2">Specific Areas of Expertise <span className="text-accent">*</span></label>
-                      <input type="text" name="expertiseAreas" placeholder="e.g. VC Term Sheets, Section 80-IAC, Secretarial Audits" required className="w-full bg-white border border-outline rounded-DEFAULT px-scale-sm-4 py-scale-sm-3 font-body text-body-sm text-charcoal focus:border-accent focus-visible:ring-2 focus-visible:ring-primary focus:outline-none" />
+                      <Label htmlFor="expertiseAreas">Specific Areas of Expertise <span className="text-accent">*</span></Label>
+                      <Input id="expertiseAreas" type="text" name="expertiseAreas" placeholder="e.g. VC Term Sheets, Section 80-IAC, Secretarial Audits" required />
                     </div>
                     <div>
-                      <label className="block font-label text-label-sm font-semibold text-charcoal mb-scale-sm-2">Preferred Working Locations <span className="text-accent">*</span></label>
-                      <input type="text" name="preferredLocations" placeholder="e.g. Delhi NCR, Remote / Pan-India, Mumbai" required className="w-full bg-white border border-outline rounded-DEFAULT px-scale-sm-4 py-scale-sm-3 font-body text-body-sm text-charcoal focus:border-accent focus-visible:ring-2 focus-visible:ring-primary focus:outline-none" />
+                      <Label htmlFor="preferredLocations">Preferred Working Locations <span className="text-accent">*</span></Label>
+                      <Input id="preferredLocations" type="text" name="preferredLocations" placeholder="e.g. Delhi NCR, Remote / Pan-India, Mumbai" required />
                     </div>
                   </div>
                   <div>
-                    <label className="block font-label text-label-sm font-semibold text-charcoal mb-scale-sm-2">Additional Comments / Client Preferences</label>
-                    <textarea name="comments" rows={2} placeholder="Any specific advisory arrangements, retainer expectations, or languages spoken..." className="w-full bg-white border border-outline rounded-DEFAULT px-scale-sm-4 py-scale-sm-3 font-body text-body-sm text-charcoal focus:border-accent focus-visible:ring-2 focus-visible:ring-primary focus:outline-none" />
+                    <Label htmlFor="comments">Additional Comments / Client Preferences</Label>
+                    <Textarea id="comments" name="comments" rows={2} placeholder="Any specific advisory arrangements, retainer expectations, or languages spoken..." />
                   </div>
                 </div>
 
@@ -373,33 +376,33 @@ export default function RegistrationFormSection() {
                   <p className="font-body text-body-xs text-muted-gray mt-1">Please confirm statutory veracity before final submission.</p>
                 </div>
                 <div className="space-y-scale-sm-4 mb-scale-sm-8 py-scale-sm-5 rounded-xl bg-secondary/50 border border-outline">
-                  <label className="flex items-start gap-scale-sm-3 cursor-pointer">
-                    <input type="checkbox" name="declarationAccurate" required className="mt-1 rounded text-accent focus:ring-accent border-outline" />
+                  <Label variant="plain" className="flex items-start gap-scale-sm-3 cursor-pointer">
+                    <Input variant="unstyled" type="checkbox" name="declarationAccurate" required className="mt-1 rounded text-accent focus:ring-accent border-outline" />
                     <span className="font-body text-body-sm text-charcoal">
                       I confirm that the information provided in this registration form and all uploaded credential documents are true, accurate, and valid to the best of my knowledge.
                     </span>
-                  </label>
-                  <label className="flex items-start gap-scale-sm-3 cursor-pointer">
-                    <input type="checkbox" name="declarationTerms" required className="mt-1 rounded text-accent focus:ring-accent border-outline" />
+                  </Label>
+                  <Label variant="plain" className="flex items-start gap-scale-sm-3 cursor-pointer">
+                    <Input variant="unstyled" type="checkbox" name="declarationTerms" required className="mt-1 rounded text-accent focus:ring-accent border-outline" />
                     <span className="font-body text-body-sm text-charcoal">
                       I agree to the{" "}
                       <a href="#" className="text-primary font-bold underline hover:text-accent">Terms and Conditions</a>,{" "}
                       <a href="#" className="text-primary font-bold underline hover:text-accent">Privacy Policy</a>, and understand that empanelment is subject to credential verification and onboarding approval.
                     </span>
-                  </label>
+                  </Label>
                 </div>
 
                 <div className="mt-scale-sm-8 flex flex-col-reverse sm:flex-row sm:justify-between sm:items-center gap-scale-sm-3">
-                  <button type="button" onClick={() => goToStep(4)} className="inline-flex items-center font-label text-label-sm text-charcoal hover:text-primary bg-secondary px-scale-sm-5 py-scale-sm-3 rounded-DEFAULT font-semibold transition-colors focus-visible:ring-2 focus-visible:ring-primary">
+                  <Button type="button" onClick={() => goToStep(4)} variant="light" size="md" className="px-scale-sm-5 text-charcoal hover:text-primary">
                     {/* @ts-expect-error iconify-icon is a web component */}
-                    <iconify-icon icon="lucide:arrow-left" className="mr-scale-sm-2" />
+                    <iconify-icon icon="lucide:arrow-left" />
                     <span>Back</span>
-                  </button>
-                  <button type="submit" className="inline-flex items-center font-label text-label-md text-on-accent bg-accent hover:bg-[#E56000] px8 py3.5 rounded-DEFAULT font-bold transition-all shadow-md focus-visible:ring-2 focus-visible:ring-primary">
+                  </Button>
+                  <Button type="submit" size="lg" className="font-bold shadow-md">
                     {/* @ts-expect-error iconify-icon is a web component */}
-                    <iconify-icon icon="lucide:check-circle" className="mr-scale-sm-2" />
+                    <iconify-icon icon="lucide:check-circle" />
                     <span>Register as a Professional</span>
-                  </button>
+                  </Button>
                 </div>
               </div>
             )}

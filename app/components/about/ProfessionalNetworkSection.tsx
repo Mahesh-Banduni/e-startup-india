@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { Button } from "../ui";
 
 export default function ProfessionalNetworkSection() {
   return (
@@ -31,20 +31,23 @@ export default function ProfessionalNetworkSection() {
               with zero joining fees.
             </p>
             <div className="mt-scale-sm-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-scale-sm-4">
-              <Link
+              <Button
                 href="/register-professional"
-                className="inline-flex items-center justify-center font-label text-label-md text-on-accent bg-accent hover:bg-[#E56000] px-scale-sm-7 py-scale-sm-3.5 rounded-DEFAULT font-bold shadow-lg transition-all text-center"
+                size="lg"
+                className="font-bold shadow-lg text-center"
               >
                 <span>Join as a Professional</span>
                 {/* @ts-expect-error iconify-icon is a web component */}
-                <iconify-icon icon="lucide:arrow-right" className="ml2" />
-              </Link>
-              <Link
+                <iconify-icon icon="lucide:arrow-right" />
+              </Button>
+              <Button
                 href="/contact"
-                className="inline-flex items-center justify-center font-label text-label-md text-white hover:text-accent bg-white/10 hover:bg-white/20 border border-white/20 px-scale-sm-6 py-scale-sm-3.5 rounded-DEFAULT font-semibold transition-all text-center"
+                variant="dark-outline"
+                size="md"
+                className="border-white/20 bg-white/10 text-center hover:bg-white/20"
               >
                 <span>Partner Desk Inquiry</span>
-              </Link>
+              </Button>
             </div>
           </div>
         </div>

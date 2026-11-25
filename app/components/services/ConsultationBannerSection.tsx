@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { Button } from "../ui";
 
 export default function ConsultationBannerSection() {
   return (
@@ -12,12 +12,9 @@ export default function ConsultationBannerSection() {
           comprehensive annual packages for high-growth ventures.
         </p>
         <div className="mt-scale-md-8 flex flex-col sm:flex-row justify-center gap-scale-sm-4">
-          <Link
-            href="/contact"
-            className="font-label text-label-md text-on-accent bg-accent hover:bg-[#E56000] px-scale-sm-8 py-scale-sm-3.5 rounded-DEFAULT font-bold shadow-md"
-          >
+          <Button href="/contact" size="lg" className="shadow-md">
             Schedule Founder Call
-          </Link>
+          </Button>
         </div>
       </div>
     </section>

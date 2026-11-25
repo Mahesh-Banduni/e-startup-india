@@ -2,6 +2,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { Button } from "./ui";
 
 const navLinks = [
   { href: "/services", label: "Services" },
@@ -75,19 +76,22 @@ export default function Navbar() {
           >
             Sign In
           </Link>
-          <Link
+          <Button
             href="/contact"
-            className="inline-flex items-center justify-center font-label text-xs sm:text-label-md text-on-accent bg-accent hover:bg-[#E56000] active:scale-95 transition-all duration-200 px-scale-md-6 py-scale-sm-3 rounded-DEFAULT font-bold shadow-md shadow-accent/20 shrink-0"
+            size="md"
+            className="text-xs sm:text-label-md active:scale-95 shadow-md shadow-accent/20 shrink-0"
           >
             <span>Get Started</span>
             {/* @ts-expect-error iconify-icon is a web component */}
-            <iconify-icon icon="lucide:arrow-right" className="ml-scale-sm-2 text-sm sm:text-base" />
-          </Link>
+            <iconify-icon icon="lucide:arrow-right" className="text-sm sm:text-base" />
+          </Button>
 
           {/* MOBILE MENU TOGGLE BUTTON */}
-          <button
+          <Button
             type="button"
-            className="lg:hidden p2 rounded-lg text-primary hover:bg-secondary border border-outline transition-colors"
+            variant="secondary"
+            size="sm"
+            className="lg:hidden p2 rounded-lg"
             aria-label={mobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
             aria-expanded={mobileMenuOpen}
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -97,7 +101,7 @@ export default function Navbar() {
               icon={mobileMenuOpen ? "lucide:x" : "lucide:menu"}
               className="text-xl sm:text-2xl"
             />
-          </button>
+          </Button>
         </div>
       </div>
 
@@ -127,20 +131,23 @@ export default function Navbar() {
             })}
           </nav>
           <div className="mt-scale-sm-4 pt-scale-sm-4 border-t border-outline flex flex-col sm:flex-row gap-scale-sm-2.5">
-            <Link
+            <Button
               href="/contact"
               onClick={() => setMobileMenuOpen(false)}
-              className="text-center font-label text-label-md text-primary font-semibold hover:bg-secondary px-scale-sm-4 py-scale-sm-2.5 rounded-DEFAULT border border-outline transition-colors"
+              variant="secondary"
+              size="sm"
+              className="text-center"
             >
               Sign In
-            </Link>
-            <Link
+            </Button>
+            <Button
               href="/contact"
               onClick={() => setMobileMenuOpen(false)}
-              className="text-center font-label text-label-md text-on-accent bg-accent hover:bg-[#E56000] px-scale-sm-4 py-scale-sm-2.5 rounded-DEFAULT font-bold transition-colors shadow-sm"
+              size="sm"
+              className="text-center shadow-sm"
             >
               Book Free Consultation
-            </Link>
+            </Button>
           </div>
         </div>
       )}
